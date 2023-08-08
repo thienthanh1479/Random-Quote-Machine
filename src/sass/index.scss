@@ -1,0 +1,82 @@
+@charset "UTF-8";
+$fa-font-path: "~@fortawesome/fontawesome-free/webfonts";
+@import "~@fortawesome/fontawesome-free/scss/fontawesome.scss";
+@import "~@fortawesome/fontawesome-free/scss/brands.scss";
+@import "~@fortawesome/fontawesome-free/scss/solid.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+@import "vars";
+@import "functions";
+@font-face {
+  font-family: "mincho";
+  src: url("../font/MS Mincho.ttf") format("truetype");
+}
+@font-face {
+  font-family: "gothic";
+  src: url("../font/MS Gothic.ttf") format("truetype");
+}
+/*------------------------------------------------------------
+	Top page
+------------------------------------------------------------*/
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+body, table,
+input, textarea, select, option, button,
+h1, h2, h3, h4, h5, h6 {
+  font-family: 游ゴシック体, 'Yu Gothic', YuGothic, 'ヒラギノ角ゴシック Pro', 'Hiragino Kaku Gothic Pro', メイリオ, Meiryo, Osaka, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  line-height: 1.1;
+}
+
+body {
+	width: 100%;
+  font-size: 16px;
+}
+
+.container-fluid {
+  background: url("https://wallpaperaccess.com/full/42614.jpg");
+  background-position: center;
+  width: 100vw;
+  min-height: 100vh;
+}
+.container-fluid > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#quote-box {
+  padding: 20px;
+}
+.quote {
+  font-size: 24px;
+}
+.author {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.buttons {
+  margin-top: 20px;
+}
+.left .btn {
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  margin-right: 10px;
+  padding: 5px;
+}
+.fa-twitter {
+  font-size: 22px;
+}
+#new-quote {
+  font-size: 16px;
+  font-weight: bold;
+}
+.copy-right {
+  color: #fff;
+  font-size: 14px;
+  margin-top: -10px;
+}
