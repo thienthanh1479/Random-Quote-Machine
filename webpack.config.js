@@ -2,7 +2,7 @@ const path = require("path");
 const webpack = require("webpack");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const devMode = (process.env.NODE_ENV !== "production");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
   entry: {
@@ -12,13 +12,14 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "[name].js",
-    clean: true,
   },
   devServer: {
     static: path.resolve(__dirname, "dist"),
     port: 3000,
-    hot: true
+    hot: true,
+    open: true
   },
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -31,17 +32,8 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           "css-loader",
-          {
-            loader: "postcss-loader",
-            options: {
-              postcssOptions: {
-                plugins: () => [
-                  require("autoprefixer")
-                ]
-              }
-            }
-          },
-           "sass-loader"
+          "postcss-loader",
+          "sass-loader"
         ],
       },
       {
@@ -73,11 +65,11 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "./css/[name].css",
-      chunkFilename: "./css/[id].css",
     }),
     new HtmlWebpackPlugin({
       template: "./src/index.html"
-    })
+    }),
+    // new BundleAnalyzerPlugin(),
   ],
   optimization: {
     splitChunks: {

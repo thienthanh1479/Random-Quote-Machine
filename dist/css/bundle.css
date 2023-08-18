@@ -1,8 +1,6 @@
-@charset "UTF-8";
-@import "~bootstrap/dist/css/bootstrap.min.css";
-@import "~@fortawesome/fontawesome-free/css/fontawesome.min.css";
-@import "~@fortawesome/fontawesome-free/css/brands.min.css";
-@import "~@fortawesome/fontawesome-free/css/solid.min.css";
+/*!********************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/scss/index.scss ***!
+  \********************************************************************************************************************************************************/
 /*------------------------------------------------------------
 	Top page
 ------------------------------------------------------------*/
@@ -11,26 +9,32 @@
   background-position: center;
   width: 100vw;
   min-height: 100vh;
-  &>div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
 }
+.container-fluid > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 #quote-box {
   padding: 20px;
 }
+
 .quote {
   font-size: 24px;
 }
+
 .author {
   font-size: 18px;
   margin-bottom: 30px;
 }
+
 .buttons {
   margin-top: 20px;
 }
+
 .left .btn {
   width: 40px;
   height: 40px;
@@ -38,13 +42,16 @@
   margin-right: 10px;
   padding: 5px;
 }
+
 .fa-twitter {
   font-size: 22px;
 }
+
 #new-quote {
   font-size: 16px;
   font-weight: bold;
 }
+
 .copy-right {
   color: #fff;
   font-size: 14px;
