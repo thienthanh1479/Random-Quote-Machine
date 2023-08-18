@@ -20,9 +20,7 @@ export default class Quote extends React.Component {
   componentDidMount() {
     axios.get(`https://dummyjson.com/quotes`)
     .then(res => {
-      quotes = res.data.quotes;
-      console.log(quotes);
-      
+      quotes = res.data.quotes;      
       this.setState({ 
         id: randomNumber,
         quote: quotes[randomNumber].quote,
